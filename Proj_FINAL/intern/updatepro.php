@@ -11,8 +11,6 @@ $Rol_name = "pro";
 $_SESSION["Rol_name"] = "pro";
 $mysqlupdaterol = "UPDATE usuaris SET Rol_name = '$Rol_name' WHERE id_usuaris = '$id_usuaris'" ;
 
-echo $mysqlupdaterol;
-
 $resultatupdate = mysqli_query($mysql, $mysqlupdaterol);
 
 if ($resultatupdate) {

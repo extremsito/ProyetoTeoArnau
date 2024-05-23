@@ -1,7 +1,10 @@
 <?php
 include ("intern/connectorSQL.php");
 session_start();
-
+function jsRedirect($url) {
+    echo "<script>window.location.href = '$url';</script>";
+    exit();
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Nom = addslashes($_POST["Nom"]);
     $password = htmlentities($_POST["password"]);

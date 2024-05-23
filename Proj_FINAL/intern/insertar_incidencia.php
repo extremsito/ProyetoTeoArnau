@@ -29,9 +29,9 @@ if ($_SESSION['Rol_name'] == "estandar"){
     }
 }elseif($_SESSION['Rol_name'] == "superpro"){
     if ($result) {
-        echo "<script>alert('Incidencia insertada correctamente'); location.href = '../pro.php';</script>";
+        echo "<script>alert('Incidencia insertada correctamente'); location.href = '../superpro.php';</script>";
     } else {
-        echo "<script>alert('Incidencia no insertada'); location.href = '../pro.php';</script>";
+        echo "<script>alert('Incidencia no insertada'); location.href = '../sueperpro.php';</script>";
     }
 }else
 ?>
