@@ -15,10 +15,23 @@ $Descripcio_problema = $_POST["Descripcio_problema"];
 $mysqlSt = "INSERT INTO incidencias (id_usuaris, Estat, Data_creacio, Descripcio_problema) VALUES ('$id_usuaris', '$Estat', '$Data_creacio', '$Descripcio_problema')";
 
 $result = mysqli_query($mysql, $mysqlSt);
-
-if ($result) {
-    echo "<script>alert('Incidencia insertada correctamente'); location.href = '../estandar.php';</script>";
-} else {
-    echo "<script>alert('Incidencia no insertada'); location.href = '../estandar.php';</script>";
-}
+if ($_SESSION['Rol_name'] == "estandar"){
+    if ($result) {
+        echo "<script>alert('Incidencia insertada correctamente'); location.href = '../estandar.php';</script>";
+    } else {
+        echo "<script>alert('Incidencia no insertada'); location.href = '../estandar.php';</script>";
+    }
+}elseif($_SESSION['Rol_name'] == "pro"){
+    if ($result) {
+        echo "<script>alert('Incidencia insertada correctamente'); location.href = '../pro.php';</script>";
+    } else {
+        echo "<script>alert('Incidencia no insertada'); location.href = '../pro.php';</script>";
+    }
+}elseif($_SESSION['Rol_name'] == "superpro"){
+    if ($result) {
+        echo "<script>alert('Incidencia insertada correctamente'); location.href = '../pro.php';</script>";
+    } else {
+        echo "<script>alert('Incidencia no insertada'); location.href = '../pro.php';</script>";
+    }
+}else
 ?>

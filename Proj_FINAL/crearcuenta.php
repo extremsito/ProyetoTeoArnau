@@ -17,12 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $result = mysqli_query($mysql, $sql);
         if (!$result) {
-            echo "<script>alert Error al ejecutar la consulta: " . "mysqli_error($mysql)</script>";
+            echo "<script>alert('Error al ejecutar la consulta: " . mysqli_error($mysql) . "');</script>";
         } else {
-            echo "<script>alert Usuario creado exitosamente. </script>";
+            echo "<script>alert('Usuario creado exitosamente.');</script>";
         }
     } else {
-        echo "<script>alert Por favor, complete todos los campos del formulario. </script>";
+        echo "<script>alert('Por favor, complete todos los campos del formulario.');</script>";
     }
 }
 ?>
@@ -37,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Crear Cuenta</title>
     <link rel="icon" type="image/png" href="logo.png">
-
 </head>
 
 <body>

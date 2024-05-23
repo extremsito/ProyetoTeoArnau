@@ -19,16 +19,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Redirigir según el rol
         if ($usuario["Rol_name"] == "admin") {
             $_SESSION['authenticated'] = true;
-            header("Location: admin.php");
+            jsRedirect("admin.php");
         } elseif ($usuario["Rol_name"] == "superpro") {
             $_SESSION['authenticated'] = true;
-            header("Location: superpro.php");
+            jsRedirect("superpro.php");
         } elseif ($usuario["Rol_name"] == "pro") {
             $_SESSION['authenticated'] = true;
-            header("Location: pro.php");
+            jsRedirect("pro.php");
         } elseif ($usuario["Rol_name"] == "estandar") {
             $_SESSION['authenticated'] = true;
-            header("Location: estandar.php");
+            jsRedirect("estandar.php");
         } else {
             echo "Rol no válido.";
         }
